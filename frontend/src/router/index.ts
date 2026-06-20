@@ -1,4 +1,4 @@
-import type { RouteRecordInfo } from 'vue-router'
+
 // src/router/index.ts
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
