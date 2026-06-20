@@ -1,0 +1,1 @@
+import{c as e,l as t,r as n,s as r}from"./index-DtG5a6LN.js";var i=r({__name:`MainLayout`,setup(r){return(r,i)=>{let a=t(`RouterView`);return e(),n(a)}}});export{i as default};
