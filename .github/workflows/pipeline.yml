@@ -1,0 +1,34 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches: [ "main" ] # Triggers when you push to main
+# 📁 This tells GitHub to run all terminal commands inside the frontend folder
+defaults:
+  run:
+    working-directory: frontend
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22.x' # Use the latest Node.js 22 version
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build project
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist # Vue builds into the 'dist' folder by default
+        branch: gh-pages # The action will automatically create and update this branch
