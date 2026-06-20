@@ -51,5 +51,4 @@
 </script>
 
 <style scoped>
---color-border: #d2d2d7;
 </style>
